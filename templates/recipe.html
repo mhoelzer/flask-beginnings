@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="burger">
     <head>
         <title>My Recipes</title>
+        <link rel="stylesheet" href="{{url_for("static", filename="style.css")}}"/>
+        <!-- ^^^ public files that aren't processed, like templates/python, should do into static folders -->
     </head>
     <body>
-        <ul id="navigation">
-            {% for item in navigation %}
-            <li>
-                <a href="{{ item.href }}">{{ item.caption }}</a>
-            </li>
-            {% endfor %}
-        </ul>
-
         <h1>My Recipes</h1>
         <h2>{{ recipe["name"] }}</h2>
         <h3>Ingredients</h3>
-        <p>{{ recipe["ingredients"] }}</p>
+        <p>
+            <ul id="ingredients">
+                {% for ingredient in recipe["ingredients"].split("\n") if ingredient != ""%}
+                <li>{{ ingredient }}</li>
+                {% endfor %}
+            </ul>
+        </p>
         <p>Time: {{ recipe["time"] }}</p>
         <p>Yields: {{ recipe["yields"] }}</p>
         <h3>Instructions</h3>
-        <p>{{ recipe["instructions"] }}</p>
         <p>
-            For further information,
-            <a target="_blank" href="{{ recipe['url'] }}">read here</a>
+            <ol id="instructions">
+                {% for instruction in recipe["instructions"].split("\n") if instruction != ""%}
+                <li>{{ instruction }}</li>
+                {% endfor %}
+            </ol>
         </p>
-        <!-- {{ a_variable }} -->
-
-        <!-- {# a comment #} -->
+        <p>
+            For further information, <a target="_blank" href="{{ recipe['url'] }}">read here</a>!
+        </p>
     </body>
 </html>
