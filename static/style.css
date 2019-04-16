@@ -1,0 +1,40 @@
+#burger {
+    width: 100%;
+    height: auto;
+    background-color: lightgoldenrodyellow;
+    background-image: url(ezgif.com-resize.gif);
+    background-position: center;
+    background-repeat: repeat;
+    -webkit-animation: backgroundScroll 22s linear infinite;
+    animation: backgroundScroll 22s linear infinite;
+}
+@-webkit-keyframes backgroundScroll {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -400px 0;
+    }
+}
+@keyframes backgroundScroll {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -400px 0;
+    }
+}
+
+body {
+    background-color: rgba(144, 238, 144, 0.8);
+    border: dotted 4px rgba(255, 136, 0, 1);
+}
+
+h1 {
+    color: magenta;
+    text-align: center;
+}
+
+h2 {
+    color: rgb(0, 62, 246);
+}
