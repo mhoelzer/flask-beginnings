@@ -11,6 +11,8 @@ autopep8 = "*"
 [packages]
 requests = "*"
 flask = "*"
+tinydb = "*"
+jinja2 = "*"
 
 [requires]
 python_version = "3.7"
